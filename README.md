@@ -1,3 +1,13 @@
+# change branch to "feature"
+This project is aim to show how we can create dynamic form and redundant code where we have to work with lots of form and form control
+
+Here Dynamic form are created using reactive form approach of angular
+
+For design purpose bootstrap has been used
+
+For Date-picker we have used angular syncfusion library
+
+
 # MayTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
