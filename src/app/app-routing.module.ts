@@ -7,7 +7,10 @@ import { SigninComponent } from './signin/signin.component';
 const routes: Routes = [
   {path: '', component:SigninComponent},
   {path: 'rectiveForm', component: AppComponent},
-  {path: 'user-data', component: DynamicFormComponent}
+  {path: 'user-data', component: DynamicFormComponent},
+  {path: 'first', component: DynamicFormComponent},
+  {path: 'second', component: DynamicFormComponent},
+  {path: 'third', component: DynamicFormComponent},
 ];
 
 @NgModule({

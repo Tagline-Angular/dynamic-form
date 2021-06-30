@@ -4,31 +4,39 @@ import { Directive, ElementRef, HostBinding, HostListener, OnInit, Renderer2 } f
     selector: '[DemoDirective]'
 })
 
-export class DemoDirective implements OnInit {
+export class DemoDirective {
     constructor(private rendrer: Renderer2, private elRef: ElementRef) {
 
     }
 
-    // @HostBinding('class.red-bg') isHover = true;
+    @HostBinding('class.show') isOpen = false;
+  
 
-    // @HostListener('mouseover') onmouseXYZ(){
-    //     // this.rendrer.removeClass(this.elRef.nativeElement, 'red-bg')
-    //     this.isHover = false
+    // Host listener event: blur | change | click | drag | drop | focus | keydown | keypress
+    //  | keyup | mouseenter | mouseover | mouseout | resize | scroll
+    
+    // will open on hover
+    // @HostListener('mouseover') openDropdown() {
+    //   let elref = this.el.nativeElement.querySelector('.dropdown-menu')
+    //   this.isOpen = true
+    //   this.renderer.addClass(elref, 'show')
+     
     // }
-
-    // @HostListener('mouseout') onmouseqwe(){
-    //     // this.rendrer.addClass(this.elRef.nativeElement, 'red-bg')
-    //     this.isHover = true;
+  
+    // @HostListener('mouseout') closeDropdown(){
+    //   let elref = this.el.nativeElement.querySelector('.dropdown-menu')
+    //   this.isOpen = false;
+    //   this.renderer.removeClass(elref, 'show')
     // }
-
-    ngOnInit() {
-        // this.rendrer.addClass(this.elRef.nativeElement, 'red-bg')
-        // const elNode = this.rendrer.createElement('h2')
-        // const textNode = this.rendrer.createText('This is title');
-        // // this.rendrer.setStyle(elNode, 'color', 'white')
-        // // this.rendrer.setAttribute(elNode, 'style','backgroundColor:black')
-        // this.rendrer.appendChild(elNode, textNode)
-        // this.rendrer.appendChild(this.elRef.nativeElement, elNode)
+  
+    // will open on click
+    @HostListener('click') toggleDropdown() {
+      this.isOpen = !this.isOpen;
+      let elref = this.elRef.nativeElement.querySelector('.dropdown-menu')
+      if(this.isOpen){
+        this.rendrer.addClass(elref, 'show')
+      } else {
+        this.rendrer.removeClass(elref, 'show')
+      }
     }
-
 }

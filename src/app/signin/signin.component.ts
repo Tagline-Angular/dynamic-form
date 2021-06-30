@@ -18,7 +18,10 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group(generateForm(this.form))
+    this.formGroup.valueChanges.subscribe((vasl) => {
+      console.log(`object`, vasl)
+    })
     // console.log(`this.formGroup`, this.formGroup)
-  }
+    }
 
 }

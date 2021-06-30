@@ -13,6 +13,7 @@ export class DynamicContorlsComponent implements OnInit, AfterViewInit {
 
   constructor() { }
   ngAfterViewInit(): void {
+    console.log(`this.key`, this.key, '=====> ', this.fieldObj)
   }
 
   get fieldObj(){
@@ -27,10 +28,13 @@ export class DynamicContorlsComponent implements OnInit, AfterViewInit {
     return this.control.invalid && this.control.touched;
   }
 
+  handleFileInput(event) {
+    const files: any = Array.from(event.target.files);
+    console.log(`handleFileInput`, files)
+  }
+
   ngOnInit(): void {
 
   }
-
-  
 
 }

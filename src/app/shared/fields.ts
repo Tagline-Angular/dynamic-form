@@ -1,5 +1,3 @@
-
-
 const template_ref = {
     name: {
         label: 'Name',
@@ -46,6 +44,20 @@ const template_ref = {
         required: true,
         label: 'Current Address',
     },
+    city: {
+        controlType: 'dropdown',
+        required: true,
+        options: [
+            {name: 'Surat', url: 'first'}, 
+            {name: 'Ahmedabad', url: 'second'}, 
+            {name: 'Baroda', url: 'third'},
+            {name: 'Rajkot', url: 'second'}
+        ]
+    },
+    profileImg: {
+        controlType: 'fileUploader',
+        required: true,
+    }
 }
 
 const segment = {
@@ -56,7 +68,9 @@ const segment = {
             'gender',
             'email',
             'dateTimePicker',
-            'address'
+            'address',
+            'city',
+            'profileImg'
         ]
     },
     signInForm: {

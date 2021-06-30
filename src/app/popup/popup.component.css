@@ -21,3 +21,8 @@
 .alert-box-action{
     text-align: right;
 }
+
+.modal{
+    display: block;
+    background-color: rgba(0,0,0,0.5);
+}
