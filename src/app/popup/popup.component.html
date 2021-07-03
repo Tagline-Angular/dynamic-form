@@ -23,7 +23,7 @@
           class="btn-close"
           data-dismiss="modal"
           aria-label="Close"
-          (click)="closePopup()"
+          (click)="btnClickEvent('close')"
         ></button>
       </div>
       <h6>{{ modalObj.subHeader }}</h6>
@@ -49,12 +49,20 @@
         }"
       >
         <button
+          *ngIf="modalObj.extraBtn"
+          class="btn btn-secondary"
+          type="button"
+          (click)="btnClickEvent('extra')"
+        >
+          {{ modalObj.extraBtn }}
+        </button>
+        <button
           *ngIf="modalObj.cancelBtn"
           type="button"
           class="btn btn-secondary"
           [ngStyle]="modalObj?.cancelBtnStyles"
           data-dismiss="modal"
-          (click)="closePopup()"
+          (click)="btnClickEvent('close')"
         >
           {{
             modalObj.cancelBtn && modalObj.cancelBtn !== true
@@ -67,7 +75,7 @@
           type="button"
           class="btn btn-success"
           [ngStyle]="modalObj?.successBtnStyles"
-          (click)="saveEvent()"
+          (click)="btnClickEvent('continue')"
         >
           {{
             modalObj.successBtn && modalObj.successBtn !== true

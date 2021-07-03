@@ -30,6 +30,7 @@ export class DynamicFormComponent
     // subHeader: 'Here you can add sub heading',
     successBtn: true,
     cancelBtn: true,
+    extraBtn:'click this btn',
     successBtnStyles: {
       color: 'red',
       backgroundColor: 'yellow',
